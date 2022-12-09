@@ -1,5 +1,48 @@
 # Shoppingmall Project
 
+
+
+## FE
+
+#### Router-header 
+
+#### pages relation
+    <App>
+    ./<Home>
+    ./products => <AllProducts>
+    ./products/new => <NewPRoduct>
+    ./products/:id => <ProductDetail>
+    ./carts => <Mycart>
+  
+#### In terminal
+      yarn add react-router-dom
+      package.json => 'react-router-dom' 확인
+  
+ #### pages
+      AllProducts.jsx
+      Home.jsx
+      Mycart.jsx
+      NewPRoducts.jsx
+      NotFound.jsx  ==> url error
+      ProductDetail.jsx
+
+ #### Router 
+      createBrowserRouter, RouterProvider from react-router-dom
+      
+      const router = createBrowserRouter([
+      {
+        path : '/',                                 // home
+        element : <App />,                          // home => App component
+        errorElement : <NotFound/>,                 // error moment
+        children : [                                // children 하위 components
+      {index : true, path : '/', element: <Home/>}, // index : true because of path 
+      ...
+      ])
+  
+  
+ #### Navbar
+      <Link to>  =>  url move
+  
 <p>
 <img src="https://img.shields.io/badge/license-mit-green">
 <img src="https://img.shields.io/github/issues/hongjin4790/SYE-project">
@@ -194,3 +237,11 @@ SOP(동일 출처 정핵)으로 인해 다른 출처의 리소스접근이 막�
 #### JwtAuthorizationFilter.doFilterInternal
     인증이나 권한이 필요한 주소요청이 있을 때 해당 필터를 거칩니다.
     사용자가 보낸 JWT토큰을 확인해 정상적인 JWT Token이라면 Filter를 더 타게합니다.
+
+
+
+
+
+
+
+
