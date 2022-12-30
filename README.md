@@ -123,7 +123,7 @@
             
             
             
-### tailwind
+#### tailwind
 
 - in terminal
     - yarn add -D tailwindcss
