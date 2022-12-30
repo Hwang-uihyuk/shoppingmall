@@ -120,6 +120,70 @@
         - <Navbar/> 와 <Outlet/>
         - <Outlet/>
             - Link와 연결된 것들의 모든 것의 element
+            
+            
+            
+### tailwind
+
+- in terminal
+    - yarn add -D tailwindcss
+    - npx tailwindcss init
+        - vs code ⇒ tailwind.config.js 생성
+    - tailwind.config.js
+        - content
+            
+            ```jsx
+            module.exports = {
+            	content : ['./src/**/*.{js.jsx}'], 
+            	
+            
+            [] 괄호안에 있는거 추가해주고
+            './src/**/*.{js.jsx}'
+            ```
+            
+        - index.css
+            - @tailwind base;
+            - @tailwind components;
+            - @tailwind utilities;
+        - index.css styling
+            
+            
+
+#### firebase login
+
+    - 인증 → web → 하란대로 따라하면 됨.
+    - 그곳에 적혀져 있는 대로 하면 안됨. 노출 xx
+    - env.local 생성후 key들을 적어줌
+    - build - web - google 하란대로 따라하기
+    - firebase에서 login 함수 만들어서
+    - Navbar쪽에 있는 button에 onClick에 함수를 넣어준다.
+
+#### firebase login & logout 2
+
+    firebase.js와 Navbar.jsx code 정리
+
+#### User profile
+
+    - User에 props로 user를 받아주고
+    - User component 생성
+    - User component 에 img tag + photoURL을 받아와서 Profile을 등록해준다.
+
+#### 새로고침 login한 상태에서 logout 되는 것 오류 해결
+
+    - Docs → web → get started 맨 마지막
+    - firebase.js ⇒ onUserStateChange 함수 생성
+    - Navbar ⇒ useEffect로 한 번 만 호출
+        - useEffect(function,deps)에서 deps에 빈 배열을 넣어주면, 한 번만 호출
+
+
+#### ‘Admin’ User vs ‘일반’ User
+
+    - firebase → realtime database에서 data에 admins(권한있는사람)을 만들어주고
+    - 그 곳에 해당하는 사람만
+    - admins 에 {”0” : “uid”} 설정하기
+    - doc → web →읽고 쓰기 확인해서 권한 주기.
+
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/caf43dbf-a8d8-4e78-82f3-929535f0b333/Untitled.png)
 #### Router-header 
 
 #### pages relation
@@ -168,6 +232,13 @@
 <br>
 </p>
 
+
+
+
+
+# B.E
+
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -177,6 +248,14 @@
     <li><a href="#인증과-인가">인증과 인가</a></li>
   </ol>
 </details>
+
+
+
+
+
+
+
+
 
 ## 소개
 Shopping mall 프로젝트를 협업하며 구현한내용을 단계별로 작성합니다.
